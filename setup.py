@@ -15,8 +15,8 @@ setup(
     install_requires=[
         'glom',
         'tqdm',
-        'pandas',
-        'numpy',
+        'pandas<2',
+        'numpy<2',
         'scikit-learn',
         'matplotlib',
         'seaborn',
@@ -25,6 +25,7 @@ setup(
         'rich',
         'starparser',
         'mrcfile',
+        'mmcif',
         'gemmi',
         'starfile',
         'pyem',
