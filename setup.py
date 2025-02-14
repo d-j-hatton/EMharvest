@@ -5,7 +5,8 @@ from setuptools import setup, find_packages
 setup(
     name='emharvest',
     version='0',
-    packages=find_packages(),
+    packages=find_packages(where='src'),
+    package_dir={'': 'src'},
     description='A system for parsing TFS EPU data structures',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
@@ -41,4 +42,14 @@ setup(
         'Natural Language :: English',
         # More classifiers: https://pypi.org/classifiers/
     ],
+    entry_points={
+        'console_scripts': [
+            'emharvest.harvest.py = emharvest.harvest_v0.2:main',
+            'emharvest.py = emharvest.emharvest:main',
+            'emharvest.print_atlas.py = emharvest.print_atlas:main',
+            'emharvest.print_dataacquisition.py = emharvest.print_dataacquisition:main',
+            'emharvest.print_screening.py = emharvest.print_screening:main',
+            'emharvest.print_session.py = emharvest.print_session:main',
+        ]
+    }
 )

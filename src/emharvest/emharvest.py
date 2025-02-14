@@ -322,7 +322,7 @@ class SessionTab(QWidget):
             if devmode:
                 script_to_execute = os.path.join(script_dir, "emharvest.harvest_dev.py")
             else:
-                script_to_execute = os.path.join(script_dir, "emharvest.harvest.py")
+                script_to_execute = os.path.join(script_dir, "harvest_v0_2.py")
 
             # Pull values from text box GUI in case they have been modified
             self.selected_script = self.script_path.text()
@@ -354,7 +354,7 @@ class SessionTab(QWidget):
         print('Preparing deposition file')
         try:
             script_dir = os.path.dirname(os.path.abspath(__file__))
-            script_to_execute = os.path.join(script_dir, "emharvest.harvest.py")
+            script_to_execute = os.path.join(script_dir, "harvest_v0_2.py")
 
             # Pull values from text box GUI in case they have been modified
             self.selected_script = self.script_path.text()
@@ -561,8 +561,12 @@ class MainWidget(QWidget):
             self.session_tab.setStyleSheet(self.light_mode_stylesheet)
             self.global_tab.setStyleSheet(self.light_mode_stylesheet)
 
-if __name__ == "__main__":
+def main():
     app = QApplication(sys.argv)
     window = MainWidget()
     window.show()
     sys.exit(app.exec_())
+  
+
+if __name__ == "__main__":
+    main()
